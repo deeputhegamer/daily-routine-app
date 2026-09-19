@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Road to Goal</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("road78:theme")||"indigo"}catch(e){document.documentElement.dataset.theme="indigo"}</script>
+  <meta name="description" content="Personal weight-gain tracker: weight, meals, water and workouts.">
+  <meta name="theme-color" content="#F4F5F8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Road to Goal">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="icons/icon-192.png" alt="" width="28" height="28">
+      <span>Road to <b id="brand-target">78</b></span>
+    </div>
+    <div class="topbar-date" id="topbar-date"></div>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <nav class="tabbar" aria-label="Sections">
+    <button data-tab="home" aria-label="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V10m5 9V5m5 14v-7m5 7V8"/></svg>
+      <span>Progress</span>
+    </button>
+    <button data-tab="today" aria-label="Today">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>
+      <span>Today</span>
+    </button>
+    <button data-tab="plan" aria-label="Plan">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4m6-4v4"/></svg>
+      <span>Plan</span>
+    </button>
+    <button data-tab="settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+
+  <div id="sheet"></div>
+  <div id="toast" role="status"></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+
+  <script src="app.js"></script>
+</body>
+</html>
